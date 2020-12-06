@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Table V01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static//css/util.css">
+
+    <link rel="stylesheet" type="text/css" href="../static//css/main.css">
+
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+    <div class="limiter">
+        <h2 style="text-align: center; background:linear-gradient(45deg, #4158d0, #c850c0);">Cập nhật trạng thái, kết
+            quả</h2>
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Mã số</th>
+                                <th class="column3">Tên</th>
+                                <th class="column2">Mã số NPB</th>
+                                <th class="column2">Điểm</th>
+                                <th class="column3">Ghi chú cho BBT</th>
+                                <th class="column3">Ghi chú cho TG</th>
+                                <th class="column3">Trạng thái</th>
+                                <th class="column3">Kết quả</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <form action="{{ url_for('indexBBT2') }}"method="post" autocomplete="off">
+                                {% for row in account %}
+                                <tr>
+                                    <td class="column1">{{ row['MaSoBB'] }}</td>
+                                    <td class="column3">{{ row['Ten'] }}</td>
+                                    <td class="column2"><input style="margin-top: 20px;" type="text" id="fname"
+                                            name="MSNPB" value="{{ row['MaSoNPB'] }}" ><br></td>
+                                    <td class="column2"><select id="cars" name="carlist" value="{{ row['Diem'] }} " disabled>
+                                            <option value=""></option>
+                                            <option value="1">"1"</option>
+                                            <option value="2">"2"</option>
+                                            <option value="3">"3"</option>
+                                            <option value="4">"4"</option>
+                                            <option value="5">"5"</option>
+                                            <option value="6">"6"</option>
+                                            <option value="7">"7"</option>
+                                            <option value="8">"8"</option>
+                                            <option value="8">"9"</option>
+                                            <option value="10">"10"</option>
+                                        </select><br></td>
+                                    <td class="column3"><input style="margin-top: 20px;" type="text" id="fname"
+                                            name="fname" value="{{ row['GhiChuBBT'] }}" placeholder="Ghi chú BBT" disabled><br></td>
+                                    <td class="column2"><input style="margin-top: 20px;" type="text" id="fname"
+                                            name="fname" value="{{ row['GhiChuTG'] }}" placeholder="Ghi chú TG" disabled><br></td>
+                                    <td class="column2"><select id="cars" name="TrangThai" >
+                                            <option value="{{ row['TrangThai'] }}">{{ row['TrangThai'] }}</option>
+                                            <option value="Phản biện">Phản biện</option>
+                                            <option value="Phản hồi phản biện">Phản hồi phản biện</option>
+                                            <option value="Hoàn tất phản biện">Hoàn tất phản biện</option>
+                                            <option value="Xuất bản">Xuất bản</option>
+                                            <option value="Đã đăng">Đã đăng</option>
+                                        </select><br></td>
+                                    <td class="column3"><input style="margin-top: 20px;" type="text" id="fname"
+                                        name="KetQua" value="{{ row['KetQua'] }}" placeholder="Kết quả" ><br></td>
+                                    
+                                </tr>  
+                                {% endfor %}
+                                <input type="submit" class="btn" value="Update">                           
+                            </form>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/vendor/bootstrap/js/popper.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>

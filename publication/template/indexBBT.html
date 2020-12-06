@@ -1,0 +1,34 @@
+<!--Store this code in 'index.html' file inside the 'templates' folder-->
+<html lang="en"> 
+    <head> 
+        <title>index</title> 
+        <link rel="stylesheet" href="../static/style.css"> 
+    </head> 
+  
+    <body bgcolor="#e6ffee"> 
+        <div class="one"> 
+            <div class="two"> 
+                <h1>Side Bar</h1> 
+                <ul> 
+                    <li class="active"><a href="{{ url_for('indexBBT1')}}">Danh sách bài báo</a></li> 
+                    <li><a href="{{ url_for('indexBBT2')}}">Cập nhật trạng thái, kết quả</a></li> 
+                    <li><a>Danh sách bài báo chưa xử lý</a></li> 
+                    <li><a>Danh sách bài báo được xuất bản</a></li>
+                    <li><a href="">Xem dánh sách các bài báo đã đăng của một tác giả</a></li> 
+                    <li><a href="">Xem tổng số bài báo đang được phản biện</a></li>
+                    <li><a href="">Xem tổng số bài báo đang được phản hồi phản biện</a></li>
+                    <li><a href="">Xem tổng số bài báo đang được xuất bản</a></li>
+                </ul>  
+            </div> 
+            <div class="content" align="center"> 
+                <div class="topbar"> 
+                    <h2>Welcome!! You are in Index Page!! </h2>                         
+                </div></br></br> 
+                <div class="contentbar"> 
+                     <div class="msg">{{ msg }}</div> 
+                </div>   
+                  
+            </div> 
+        </div> 
+    </body> 
+</html> 

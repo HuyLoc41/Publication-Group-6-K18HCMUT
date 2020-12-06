@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Table V01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static//css/util.css">
+
+    <link rel="stylesheet" type="text/css" href="../static//css/main.css">
+
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+    <div class="limiter">
+        <h2 style="text-align: center; background:linear-gradient(45deg, #4158d0, #c850c0);">Danh sách bài báo</h2>
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Mã số</th>
+                                <th class="column2">Số trang</th>
+                                <th class="column3">Tiêu đề</th>
+                                <th class="column4">Tên</th>
+                                <th class="column5">Tóm tắt</th>
+                                <th class="column6">Từ khóa</th>
+                                <th class="column2">File</th>
+                                <th class="column2">Mã số BBT</th>
+                                <th class="column2">Mã số TG</th>
+                                <th class="column2">Mã số NPB</th>
+                                <th class="column4">Ghi chú cho BBT</th>
+                                <th class="column4">Ghi chú cho TG</th>
+                                <th class="column4">Điểm</th>
+                                <th class="column4">Trạng Thái</th>
+                                <th class="column4">Kết quả</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in account %}
+                            <tr>
+                                <td class="column1">{{ row['MaSoBB'] }}</td>
+                                <td class="column2">{{ row['SoTrang'] }}</td>
+                                <td class="column3">{{ row['Ten'] }}</td>
+                                <td class="column4">{{ row['TomTat'] }}</td>
+                                <td class="column5">{{ row['TieuDe'] }}</td>
+                                <td class="column6">{{ row['TuKhoa'] }}</td>
+                                <td class="column2">{{ row['FileBB'] }}</td>
+                                <td class="column2">{{ row['MaSoBBT'] }}</td>
+                                <td class="column2">{{ row['MaSoTG'] }}</td>
+                                <th class="column2">{{ row['MaSoNPB'] }}</th>
+                                <th class="column4">{{ row['GhiChuBBT'] }}</th>
+                                <th class="column4">{{ row['GhiChuTG'] }}</th>
+                                <th class="column4">{{ row['Diem'] }}</th>
+                                <th class="column4">{{ row['TrangThai'] }}</th>
+                                <th class="column4">{{ row['KetQua'] }}</th>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/vendor/bootstrap/js/popper.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>
