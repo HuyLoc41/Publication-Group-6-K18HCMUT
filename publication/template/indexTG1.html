@@ -48,17 +48,13 @@
     <div class="limiter">
         <div class="container-table100">
             <div class="wrap-table100">
-                <h2 style="text-align: center;">Thông tin cá nhân</h2>
+                <h2 style="text-align: center;">Cập nhật thông tin cá nhân</h2>
                 <p>{{msg}}</p>
-                <form action="{{ url_for('indexNPB1') }}" style="margin-top:30px;" method="post" autocomplete="off">
-                    
-                    <input style="margin-top:10px;" type="text" id="fname" name="SDT" placeholder="SĐT" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="Ten" placeholder="Tên" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="KiNang" placeholder="Kĩ năng" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="ChuyenMon" placeholder="Chuyên môn" value="">
+                <form action="{{ url_for('indexTG1') }}" style="margin-top:30px;" method="post" autocomplete="off">                   
                     <input style="margin-top:10px;" type="text" id="fname" name="CoQuan" placeholder="Cơ quan" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="MailCoQuan" placeholder="Mail cơ quan" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="MailCaNhan" placeholder="Mail cá nhân" value="">
+                    <input style="margin-top:10px;" type="text" id="fname" name="DiaChi" placeholder="Địa chỉ" value="">
+                    <input style="margin-top:10px;" type="text" id="fname" name="Mail" placeholder="Mail" value="">
+                    <input style="margin-top:10px;" type="text" id="fname" name="Nghe" placeholder="Nghề nghiệp" value="">
                     <input style="margin-top:10px;" type="submit" class="btn" value="Update">
                 </form>
             </div>

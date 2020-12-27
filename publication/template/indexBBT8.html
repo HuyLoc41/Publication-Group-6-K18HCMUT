@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for row in accountNC1%}
+    <p>Tổng số bài báo đang được phản biện {{row['COUNT(*)']}}</p> <br>
+    {%endfor%}
+    {% for row1 in accountTQ1%}
+    <p>Tổng số bài báo đang được phản hồi phản biện {{row1['COUNT(*)']}}</p> <br>
+    {%endfor%}
+    {% for row2 in accountPB1%}
+    <p>Tổng số bài báo đang được xuất bản {{row2['COUNT(*)']}}</p> <br> 
+    {%endfor%}
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Trung bình số bài báo mỗi năm phản biện trong 5 năm gần nhất.</p>
+    {%for row in Nam2020all%}
+        {%for row1 in Nam2020%}
+            <p>Năm 2020: {%if(row['COUNT(*)']!=0):%} {{row1['COUNT(*)'] / row['COUNT(*)'] }} {%endif%}</p>
+        {%endfor%}
+    {%endfor%}
+    {%for row in Nam2019all%}
+        {%for row1 in Nam2019%}
+            <p>Năm 2019: {%if(row['COUNT(*)']!=0):%} {{row1['COUNT(*)'] / row['COUNT(*)'] }} {%endif%}</p>
+        {%endfor%}
+    {%endfor%}
+    {%for row in Nam2018all%}
+        {%for row1 in Nam2018%}
+            <p>Năm 2018: {%if(row['COUNT(*)']!=0):%} {{row1['COUNT(*)'] / row['COUNT(*)'] }} {%endif%}</p>
+        {%endfor%}
+    {%endfor%}
+    {%for row in Nam2017all%}
+        {%for row1 in Nam2017%}
+            <p>Năm 2017: {% if(row['COUNT(*)']!=0):%} {{row1['COUNT(*)'] / row['COUNT(*)'] }} {%endif%}</p>
+        {%endfor%}
+    {%endfor%}
+    {%for row in Nam2016all%}
+        {%for row1 in Nam2016%}
+            <p>Năm 2016: {%if(row['COUNT(*)']!=0):%} {{row1['COUNT(*)'] / row['COUNT(*)'] }} {%endif%}</p>
+        {%endfor%}
+    {%endfor%}
+</body>
+</html>

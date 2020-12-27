@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Tổng số bài báo nghiên cứu mỗi năm trong 5 năm gần nhất:</p>
+    {%for row1 in account%}
+    <p>Năm {{b}} là: {{row1['COUNT(*)']}} bài báo</p>
+    {%endfor%}
+
+    {%for row1 in account1%}
+    <p>Năm {{b1}} là: {{row1['COUNT(*)']}} bài báo</p>
+    {%endfor%}
+
+    {%for row1 in account2%}
+    <p>Năm {{b2}} là: {{row1['COUNT(*)']}} bài báo</p>
+    {%endfor%}
+
+    {%for row1 in account3%}
+    <p>Năm {{b3}} là: {{row1['COUNT(*)']}} bài báo</p>
+    {%endfor%}
+
+    {%for row1 in account4%}
+    <p>Năm {{b4}} là: {{row1['COUNT(*)']}} bài báo</p>
+    {%endfor%}
+
+    <p>Tổng số bài báo tổng quan mỗi năm trong 5 năm gần nhất:</p>
+    {%for row1 in account5%}
+    <p>Năm {{b5}} là: {{row1['COUNT(*)']}} bài báo</p>
+    {%endfor%}
+
+    {%for row1 in account6%}
+    <p>Năm {{b6}} là: {{row1['COUNT(*)']}} bài báo</p>
+    {%endfor%}
+
+    {%for row1 in account7%}
+    <p>Năm {{b7}} là: {{row1['COUNT(*)']}} bài báo</p>
+    {%endfor%}
+
+    {%for row1 in account8%}
+    <p>Năm {{b8}} là: {{row1['COUNT(*)']}} bài báo</p>
+    {%endfor%}
+
+    {%for row1 in account9%}
+    <p>Năm {{b9}} là: {{row1['COUNT(*)']}} bài báo</p>
+    {%endfor%}
+</body>
+
+</html>

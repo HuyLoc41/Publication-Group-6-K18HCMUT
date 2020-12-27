@@ -28,43 +28,64 @@
 <body>
 
     <div class="limiter">
+        <h2 style="text-align: center; background:linear-gradient(45deg, #4158d0, #c850c0);">Cập nhật trạng thái, kết
+            quả</h2>
         <div class="container-table100">
             <div class="wrap-table100">
-                <h2 style="text-align: center;">Danh sách bài báo</h2>
                 <div class="table100">
                     <table>
                         <thead>
                             <tr class="table100-head">
                                 <th class="column1">Mã số</th>
-                                <th class="column1">Tác giả</th>
-                                <th class="column2">Số trang</th>
-                                <th class="column3">Tiêu đề</th>
-                                <th class="column4">Tên</th>
-                                <th class="column5">Tóm tắt</th>
-                                <th class="column6">Từ khóa</th>
-                                <th class="column2">File</th>
-                           
-                                <th class="column2">Ngày gửi đến</th>
+                                <th class="column3">Tên</th>
+                                <th class="column2">Mã số NPB</th>
+                                <th class="column2">Điểm</th>
+                                <th class="column3">Ghi chú cho BBT</th>
+                                <th class="column3">Ghi chú cho TG</th>
+                                <th class="column3">Trạng thái</th>
+                                <th class="column3">Kết quả</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             {% for row in account %}
                             <tr>
-                                <td class="column1">{{ row['MaSoBB'] }}</td>
-                                <td class="column1">{{ row['MaSoTG'] }}</td>
-                                <td class="column2">{{ row['SoTrang'] }}</td>
-                                <td class="column5">{{ row['TieuDe'] }}</td>
-                                <td class="column3">{{ row['Ten'] }}</td>
-                                <td class="column4">{{ row['TomTat'] }}</td>
-                                
-                                <td class="column6">{{ row['TuKhoa'] }}</td>
-                                <td class="column2">{{ row['FileBB'] }}</td>
-                                <td class="column2">{{ row['NgayGui'] }}</td>
+                                <td class="column2">huy</td>
+                                <td class="column3">Ten</td>
+                                <td class="column2"> huyyyyy </td>
+                                <td class="column2"> huyyyyy </td>
+                                <td class="column3"> huyyyyy </td>
+                                <td class="column2"> huyyyyy </td>
+                                <td class="column2"> huyyyyy </td>
+                                <td class="column3"> huyyyyy </td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
+
                 </div>
+                <form style="margin-top:20px;" action="{{ url_for('indexBBT2') }}" method="post" autocomplete="off">
+                    <tr>
+                        <td class="column1"><input  type="text" id="fname" name="MSNPB" placeholder="Mã số bài báo"
+                                value="#"><br></td>
+                        <td class="column3"><input  type="text" id="fname" name="MSNPB" placeholder="Tên bài báo"
+                                value="#"><br></td>
+                        <td class="column2"><input  type="text" id="fname" name="MSNPB" placeholder="Mã số NPB"
+                                value="#"><br></td>
+                        <td class="column2"><select style="height: 25px; width: 180px;" type="text" id="fname"  name="huy">
+                                <option value="#">#</option>
+                                <option value="Phản biện">Phản biện</option>
+                                <option value="Phản hồi phản biện">Phản hồi phản biện</option>
+                                <option value="Hoàn tất phản biện">Hoàn tất phản biện</option>
+                                <option value="Xuất bản">Xuất bản</option>
+                                <option value="Đã đăng">Đã đăng</option>
+                            </select><br></td>
+                        <td class="column3"><input style="margin-top: 20px;" type="text" id="fname" name="KetQua" placeholder="Kết quả"
+                                value="#" ><br></td>
+
+                    </tr>
+                    <input type="submit" class="btn" value="Update">
+                </form>
             </div>
         </div>
     </div>

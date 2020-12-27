@@ -10,16 +10,17 @@
             <div class="two"> 
                 <h1>Side Bar</h1> 
                 <ul> 
-                    <li class="active"><a href="">Cập nhật thông tin cá nhân</a></li> 
-                    <li><a href="">Cập nhật phản biện</a></li> 
-                    <li><a href="">Danh sách bài báo theo loại đang phản biện</a></li>
-                    <li><a href="">Danh sách bài báo theo loại đã phản biện trong ba năm</a></li>
-                    <li><a href="">Danh sách tác giả có nhiều bài được phản biện</a></li>
-                    <li><a href="">Danh sách bài báo của tác giả đang phản biện</a></li>
-                    <li><a href="">Xem kết quả phản biện bài báo trong năm</a></li> 
-                    <li><a href="">Xem số bài báo phản biện nhiều nhất trong ba năm</a></li>
-                    <li><a href="">Xem 3 bài báo mà mình đã phản biện có kết quả tốt nhất/thấp nhất </a></li>
-                    <li><a href="">Xem trung bình số bài báo mỗi năm đã phản biện trong 5 năm gần đây nhất</a></li>
+                    <li class="active"><a href="{{ url_for('indexNPB1')}}">Cập nhật thông tin cá nhân</a></li> 
+                    <li><a href="{{ url_for('indexNPB2')}}">Cập nhật phản biện</a></li> 
+                    <li><a href="{{ url_for('indexNPB3')}}">Danh sách bài báo theo loại đang phản biện</a></li>
+                    <li><a href="{{ url_for('indexNPB4')}}">Danh sách bài báo theo loại đã phản biện trong ba năm</a></li>
+                    <li><a href="{{ url_for('indexNPB5')}}">Danh sách bài báo của tác giả đang phản biện</a></li>
+                    <li><a href="{{ url_for('indexNPB6')}}">Danh sách bài báo của tác giả đã phản biện trong 3 năm</a></li>
+                   
+                    <li><a href="{{ url_for('indexNPB8')}}" >Xem kết quả phản biện bài báo trong năm</a></li> 
+                   
+                    <li><a href="{{ url_for('indexNPB9')}}">Xem bài báo mà mình đã phản biện có kết quả tốt nhất/thấp nhất </a></li>
+                    <li><a href="{{ url_for('indexNPB10')}}">Xem trung bình số bài báo mỗi năm đã phản biện trong 5 năm gần đây nhất</a></li>
                 </ul>  
             </div> 
             <div class="content" align="center"> 

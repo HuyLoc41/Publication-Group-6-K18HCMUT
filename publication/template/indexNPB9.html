@@ -30,36 +30,76 @@
     <div class="limiter">
         <div class="container-table100">
             <div class="wrap-table100">
-                <h2 style="text-align: center;">Danh sách bài báo</h2>
+                <h3 style="text-align: center;">Danh sách bài báo kết quả tốt nhất</h3>
                 <div class="table100">
                     <table>
                         <thead>
                             <tr class="table100-head">
                                 <th class="column1">Mã số</th>
-                                <th class="column1">Tác giả</th>
                                 <th class="column2">Số trang</th>
                                 <th class="column3">Tiêu đề</th>
                                 <th class="column4">Tên</th>
                                 <th class="column5">Tóm tắt</th>
                                 <th class="column6">Từ khóa</th>
                                 <th class="column2">File</th>
-                           
-                                <th class="column2">Ngày gửi đến</th>
+                             
+                                <th class="column2">Mã số TG</th>
+                                <th class="column2">Ngày gửi</th>
+                                <th class="column2">Kết quả</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for row in account %}
+                            {% for rowNC1 in accountNC1 %}
                             <tr>
-                                <td class="column1">{{ row['MaSoBB'] }}</td>
-                                <td class="column1">{{ row['MaSoTG'] }}</td>
-                                <td class="column2">{{ row['SoTrang'] }}</td>
-                                <td class="column5">{{ row['TieuDe'] }}</td>
-                                <td class="column3">{{ row['Ten'] }}</td>
-                                <td class="column4">{{ row['TomTat'] }}</td>
-                                
-                                <td class="column6">{{ row['TuKhoa'] }}</td>
-                                <td class="column2">{{ row['FileBB'] }}</td>
-                                <td class="column2">{{ row['NgayGui'] }}</td>
+                                <td class="column1">{{ rowNC1['MaSoBB'] }}</td>
+                                <td class="column2">{{ rowNC1['SoTrang'] }}</td>
+                                <td class="column3">{{ rowNC1['Ten'] }}</td>
+                                <td class="column4">{{ rowNC1['TomTat'] }}</td>
+                                <td class="column5">{{ rowNC1['TieuDe'] }}</td>
+                                <td class="column6">{{ rowNC1['TuKhoa'] }}</td>
+                                <td class="column2">{{ rowNC1['FileBB'] }}</td>
+                                <td class="column2">{{ rowNC1['MaSoTG'] }}</td>
+                                <td class="column2">{{ rowNC1['NgayGui'] }}</td>
+                                <td class="column2">{{ rowNC1['KetQua'] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="wrap-table100" style="margin-top:50px;">
+                <h3 style="text-align: center;">Danh sách bài báo kết quả thấp nhất</h3>
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Mã số</th>
+                                <th class="column2">Số trang</th>
+                                <th class="column3">Tiêu đề</th>
+                                <th class="column4">Tên</th>
+                                <th class="column5">Tóm tắt</th>
+                                <th class="column6">Từ khóa</th>
+                                <th class="column2">File</th>
+                             
+                                <th class="column2">Mã số TG</th>
+                                <th class="column2">Ngày gửi</th>
+                                <th class="column2">Kết quả</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for rowTQ in accountNC2 %}
+                            <tr>
+                                <td class="column1">{{ rowTQ['MaSoBB'] }}</td>
+                                <td class="column2">{{ rowTQ['SoTrang'] }}</td>
+                                <td class="column3">{{ rowTQ['Ten'] }}</td>
+                                <td class="column4">{{ rowTQ['TomTat'] }}</td>
+                                <td class="column5">{{ rowTQ['TieuDe'] }}</td>
+                                <td class="column6">{{ rowTQ['TuKhoa'] }}</td>
+                                <td class="column2">{{ rowTQ['FileBB'] }}</td>
+                                <td class="column2">{{ rowTQ['MaSoTG'] }}</td>
+                                <td class="column2">{{ rowTQ['NgayGui'] }}</td>
+                                <td class="column2">{{ rowTQ['KetQua'] }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Table V01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static//css/util.css">
+
+    <link rel="stylesheet" type="text/css" href="../static//css/main.css">
+
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <h3 style="text-align: center;">Danh sách bài báo nghiên cứu</h3>
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Mã số</th>
+                                <th class="column2">Số trang</th>
+                                <th class="column3">Tiêu đề</th>
+                                <th class="column4">Tên</th>
+                                <th class="column5">Tóm tắt</th>
+                                <th class="column6">Từ khóa</th>
+                                <th class="column2">File</th>
+                             
+                                <th class="column2">Mã số TG</th>
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for rowNC in accountNC %}
+                            <tr>
+                                <td class="column1">{{ rowNC['MaSoBB'] }}</td>
+                                <td class="column2">{{ rowNC['SoTrang'] }}</td>
+                                <td class="column3">{{ rowNC['Ten'] }}</td>
+                                <td class="column4">{{ rowNC['TomTat'] }}</td>
+                                <td class="column5">{{ rowNC['TieuDe'] }}</td>
+                                <td class="column6">{{ rowNC['TuKhoa'] }}</td>
+                                <td class="column2">{{ rowNC['FileBB'] }}</td>
+                                
+                                <td class="column2">{{ rowNC['MaSoTG'] }}</td>
+                            
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="wrap-table100" style="margin-top:50px;">
+                <h3 style="text-align: center;">Danh sách bài báo tổng quan</h3>
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Mã số</th>
+                                <th class="column2">Số trang</th>
+                                <th class="column3">Tiêu đề</th>
+                                <th class="column4">Tên</th>
+                                <th class="column5">Tóm tắt</th>
+                                <th class="column6">Từ khóa</th>
+                                <th class="column2">File</th>
+                             
+                                <th class="column2">Mã số TG</th>
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for rowTQ in accountTQ %}
+                            <tr>
+                                <td class="column1">{{ rowTQ['MaSoBB'] }}</td>
+                                <td class="column2">{{ rowTQ['SoTrang'] }}</td>
+                                <td class="column3">{{ rowTQ['Ten'] }}</td>
+                                <td class="column4">{{ rowTQ['TomTat'] }}</td>
+                                <td class="column5">{{ rowTQ['TieuDe'] }}</td>
+                                <td class="column6">{{ rowTQ['TuKhoa'] }}</td>
+                                <td class="column2">{{ rowTQ['FileBB'] }}</td>
+                                <td class="column2">{{ rowTQ['MaSoTG'] }}</td>
+                            
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="wrap-table100" style="margin-top:50px;">
+                <h3 style="text-align: center;">Danh sách bài báo phản biện</h3>
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Mã số</th>
+                                <th class="column2">Số trang</th>
+                                <th class="column3">Tiêu đề</th>
+                                <th class="column4">Tên</th>
+                                <th class="column5">Tóm tắt</th>
+                                <th class="column6">Từ khóa</th>
+                                <th class="column2">File</th>
+                             
+                                <th class="column2">Mã số TG</th>
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for rowPB in accountPB %}
+                            <tr>
+                                <td class="column1">{{ rowPB['MaSoBB'] }}</td>
+                                <td class="column2">{{ rowPB['SoTrang'] }}</td>
+                                <td class="column3">{{ rowPB['Ten'] }}</td>
+                                <td class="column4">{{ rowPB['TomTat'] }}</td>
+                                <td class="column5">{{ rowPB['TieuDe'] }}</td>
+                                <td class="column6">{{ rowPB['TuKhoa'] }}</td>
+                                <td class="column2">{{ rowPB['FileBB'] }}</td>
+                                <td class="column2">{{ rowPB['MaSoTG'] }}</td>
+                            
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/vendor/bootstrap/js/popper.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>

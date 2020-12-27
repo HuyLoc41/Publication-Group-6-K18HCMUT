@@ -1,21 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="infomation">
-        
-    </div>
-    
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,18 +30,45 @@
     <div class="limiter">
         <div class="container-table100">
             <div class="wrap-table100">
-                <h2 style="text-align: center;">Thông tin cá nhân</h2>
-                <p>{{msg}}</p>
-                <form action="{{ url_for('indexNPB1') }}" style="margin-top:30px;" method="post" autocomplete="off">
-                    
-                    <input style="margin-top:10px;" type="text" id="fname" name="SDT" placeholder="SĐT" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="Ten" placeholder="Tên" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="KiNang" placeholder="Kĩ năng" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="ChuyenMon" placeholder="Chuyên môn" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="CoQuan" placeholder="Cơ quan" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="MailCoQuan" placeholder="Mail cơ quan" value="">
-                    <input style="margin-top:10px;" type="text" id="fname" name="MailCaNhan" placeholder="Mail cá nhân" value="">
-                    <input style="margin-top:10px;" type="submit" class="btn" value="Update">
+                <h2 style="text-align: center;">Thông tin trạng thái bài báo {{MS}}</h2>
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Mã số</th>
+                                <th class="column1">Tác giả</th>
+                                <th class="column2">Số trang</th>
+                                <th class="column3">Tiêu đề</th>
+                                <th class="column4">Tên</th>
+                                <th class="column5">Tóm tắt</th>
+                                <th class="column6">Từ khóa</th>
+                                <th class="column2">File</th>
+                                <th class="column2">Trạng Thái</th>
+                             
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in account %}
+                            <tr>
+                                <td class="column1">{{ row['MaSoBB'] }}</td>
+                                <td class="column1">{{ row['MaSoTG'] }}</td>
+                                <td class="column2">{{ row['SoTrang'] }}</td>
+                                <td class="column5">{{ row['TieuDe'] }}</td>
+                                <td class="column3">{{ row['Ten'] }}</td>
+                                <td class="column4">{{ row['TomTat'] }}</td>
+                                <td class="column6">{{ row['TuKhoa'] }}</td>
+                                <td class="column2">{{ row['FileBB'] }}</td>
+                                <td class="column2">{{ row['TrangThai'] }}</td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <form action="{{ url_for('indexTG4') }}" style="margin-top:30px;" method="post" autocomplete="off">
+                                       
+                    <input style="margin-top:10px;" type="text" id="fname" name="MaSoBB" placeholder="Mã số bài báo" value="">
+                    <input style="margin-top:10px;" type="submit" class="btn" value="Tìm kiếm">
                 </form>
             </div>
         </div>

@@ -28,10 +28,10 @@
 <body>
 
     <div class="limiter">
-        <h2 style="text-align: center; background:linear-gradient(45deg, #4158d0, #c850c0);">Cập nhật trạng thái, kết
-            quả</h2>
         <div class="container-table100">
             <div class="wrap-table100">
+                <h2 style="text-align: center;">Cập nhật trạng thái, kết
+                    quả</h2>
                 <div class="table100">
                     <table>
                         <thead>
@@ -44,52 +44,70 @@
                                 <th class="column3">Ghi chú cho TG</th>
                                 <th class="column3">Trạng thái</th>
                                 <th class="column3">Kết quả</th>
+                                <th class="column3">Ngày gửi tới</th>
+                                <th class="column3">Ngày có kết quả</th>
                             </tr>
                         </thead>
-                        
+
                         <tbody>
-                            <form action="{{ url_for('indexBBT2') }}"method="post" autocomplete="off">
-                                {% for row in account %}
-                                <tr>
-                                    <td class="column1">{{ row['MaSoBB'] }}</td>
-                                    <td class="column3">{{ row['Ten'] }}</td>
-                                    <td class="column2"><input style="margin-top: 20px;" type="text" id="fname"
-                                            name="MSNPB" value="{{ row['MaSoNPB'] }}" ><br></td>
-                                    <td class="column2"><select id="cars" name="carlist" value="{{ row['Diem'] }} " disabled>
-                                            <option value=""></option>
-                                            <option value="1">"1"</option>
-                                            <option value="2">"2"</option>
-                                            <option value="3">"3"</option>
-                                            <option value="4">"4"</option>
-                                            <option value="5">"5"</option>
-                                            <option value="6">"6"</option>
-                                            <option value="7">"7"</option>
-                                            <option value="8">"8"</option>
-                                            <option value="8">"9"</option>
-                                            <option value="10">"10"</option>
-                                        </select><br></td>
-                                    <td class="column3"><input style="margin-top: 20px;" type="text" id="fname"
-                                            name="fname" value="{{ row['GhiChuBBT'] }}" placeholder="Ghi chú BBT" disabled><br></td>
-                                    <td class="column2"><input style="margin-top: 20px;" type="text" id="fname"
-                                            name="fname" value="{{ row['GhiChuTG'] }}" placeholder="Ghi chú TG" disabled><br></td>
-                                    <td class="column2"><select id="cars" name="TrangThai" >
-                                            <option value="{{ row['TrangThai'] }}">{{ row['TrangThai'] }}</option>
-                                            <option value="Phản biện">Phản biện</option>
-                                            <option value="Phản hồi phản biện">Phản hồi phản biện</option>
-                                            <option value="Hoàn tất phản biện">Hoàn tất phản biện</option>
-                                            <option value="Xuất bản">Xuất bản</option>
-                                            <option value="Đã đăng">Đã đăng</option>
-                                        </select><br></td>
-                                    <td class="column3"><input style="margin-top: 20px;" type="text" id="fname"
-                                        name="KetQua" value="{{ row['KetQua'] }}" placeholder="Kết quả" ><br></td>
-                                    
-                                </tr>  
-                                {% endfor %}
-                                <input type="submit" class="btn" value="Update">                           
-                            </form>
+                            {% for row in account %}
+                            <tr>
+                                <td class="column2">{{ row['MaSoBB'] }}</td>
+                                <td class="column3">{{ row['Ten'] }}</td>
+                                <td class="column2"> {{ row['MaSoNPB'] }} </td>
+                                <td class="column2"> {{ row['Diem'] }} </td>
+                                <td class="column3"> {{ row['GhiChuBBT'] }} </td>
+                                <td class="column2"> {{ row['GhiChuTG'] }} </td>
+                                <td class="column2"> {{ row['TrangThai'] }} </td>
+                                <td class="column3"> {{ row['KetQua'] }} </td>
+                                <td class="column3"> {{ row['NgayGui'] }} </td>
+                                <td class="column3"> {{ row['NgayCapNhatKQ'] }} </td>
+                                
+                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
+
                 </div>
+                <form style="margin-top:20px;" action="{{ url_for('indexBBT2') }}" method="post" autocomplete="off">
+                    <tr>
+                        <td class="column1"><input type="text" id="fname" name="MaSoBB" placeholder="Mã số bài báo"
+                                value=""><br></td>
+                        
+                        <td class="column2"><input type="text" id="fname" name="MSNPB" placeholder="Mã số NPB"
+                                value=""><br></td>
+                        <!-- <td class="column2"><select style="height: 25px; width: 180px; display: block;" type="text" id="fname"
+                                name="Diem" aria-placeholder="ll">
+                                <option value="#"></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select><br></td> -->
+                        <td class="column2"><select style="height: 25px; width: 180px;" type="text" id="fname"
+                                name="TrangThai" aria-placeholder="ll">
+                                <option value="#"></option>
+                                <option value="Phản biện">Phản biện</option>
+                                <option value="Phản hồi phản biện">Phản hồi phản biện</option>
+                                <option value="Hoàn tất phản biện">Hoàn tất phản biện</option>
+                                <option value="Xuất bản">Xuất bản</option>
+                                <option value="Đã đăng">Đã đăng</option>
+                            </select><br></td>
+
+                            <td class="column2"><select style="height: 25px; width: 180px; margin-top: 20px;" type="text" id="fname"
+                                name="KetQua" aria-placeholder="ll">
+                                <option value="#"></option>
+                                <option value="rejection">rejection</option>
+                                <option value="minor revision">minor revision</option>
+                                <option value="major revision">major revision</option>
+                                <option value="acceptance">acceptance</option>
+                            </select><br></td>
+                            <td class="column1"><input style="margin-top: 20px;" type="text" id="fname" name="NgayCapNhatKQ" placeholder="yyyy/mm/dd"
+                                value=""><br></td>
+                    </tr>
+                    <input type="submit" class="btn" value="Update">
+                </form>
             </div>
         </div>
     </div>
